@@ -25,7 +25,7 @@
                         <input type="password" placeholder="Password" id="password" />
                     </div>
                     <input type="submit" value="Login" class="btn solid" onclick="LogVal()" />
-                    <p class="social-text">Or Sign in with social platforms</p>
+                    <!-- <p class="social-text">Or Sign in with social platforms</p> -->
                     <!-- <div class="social-media">
                         <a href="#" class="social-icon">
                             <i class="fab fa-facebook-f"></i>
@@ -71,7 +71,7 @@
                         <input type="password" placeholder="Confirm Password" id="password2" required />
                     </div>
                     <input type="submit" class="btn" value="Sign up" onclick="RegVal()" />
-                    <p class="social-text">Or Sign up with social platforms</p>
+                    <!-- <p class="social-text">Or Sign up with social platforms</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
                             <i class="fab fa-facebook-f"></i>
@@ -85,7 +85,7 @@
                         <a href="#" class="social-icon">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                    </div>
+                    </div> -->
                 </form>
             </div>
         </div>
@@ -132,7 +132,8 @@
         sign_in_btn.addEventListener("click", () => {
             container.classList.remove("sign-up-mode");
         });
-
+        
+        //login credentials are being validated
         function LogVal() {
             var mail = document.getElementById('mail')
             var pword = document.getElementById('password')
@@ -164,8 +165,7 @@
 
         }
 
-
-
+        //registration credentials are being validated here
         function RegVal() {
             var name = document.getElementById('name')
             var email = document.getElementById('email')
@@ -201,12 +201,12 @@
                 return
             }
 
-            var phnumber = /[0-9]{10,10}/
+            var phnumber = /[0-9]{10}/
             if (!phnumber.test(phone.value)) {
                 alert("Phone Number can only consist of 10 digits")
                 return
             }
-
+           
             var psword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~`!@#$%^_+={}|:"<>,.?])[A-Za-z\d@$!%*?&]{8,}$/
             if (!psword.test(password1.value)) {
                 alert("Password Criteria not met")
